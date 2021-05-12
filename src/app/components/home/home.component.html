@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <div class="row">
+    <p class="text-center app-header">Cities Weather:</p>
+    <div class="error" *ngIf="errorMessage.length">{{errorMessage}}</div>
+    <div *ngIf= "cities.length">
+        <div *ngFor="let city of cities">
+            <a routerLink="weatherDetails/{{city.id}}" class="card_link">
+            <div class="card card-mb">
+                <div class="card-body">
+                    <h5 class="card-title">{{ city.name }}</h5>
+                    <h4 class="card-subtitle mb-2 text-muted">{{city?.main?.temp}}</h4>
+                    <span class="sunrise-time"><b>Sunrise time:</b> {{city?.sys?.sunrise | date :'dd-MMM-yy h:mm:ss a z'}}</span>
+                    <span class="sunset-time"><b>Sunset time:</b> {{city?.sys?.sunset | date :'dd-MMM-yy h:mm:ss a z'}}</span>
+                </div>
+            </div>
+            </a>
+        </div>
+    </div>
+    </div>
+</div>
+

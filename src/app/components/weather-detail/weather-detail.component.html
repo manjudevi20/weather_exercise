@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="row">
+    <p class="text-center app-header">Weather Details</p>
+    <div *ngIf= "weatherDetails.length">
+        <div *ngFor="let weather of weatherDetails">
+            <div class="card card-mb">
+                <div class="card-body col-md-12 col-sm-12 col-xs-12">
+                    <span class="mr">Date & Time: {{weather?.dt_txt}}</span>
+                    <span class="card-title mr">Temp: {{ weather?.main?.temp }}</span>
+                    <span class="card-subtitle mr mb-2">Humidity: {{weather?.main?.humidity}}</span>
+                    <span class="sunrise-time mr">Sea level: {{weather?.main?.sea_level}}</span>
+                    <span class="sunset-time mr">Feels like: {{weather?.main?.feels_like}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
